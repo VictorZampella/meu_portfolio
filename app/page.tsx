@@ -14,8 +14,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black flex flex-col">
       <Navbar />
-      <main className="flex-grow p-8 flex flex-col lg:flex-row items-center justify-between">
-        <div className="flex flex-col gap-8 lg:w-1/2 mb-8 lg:mb-0">
+      <main className="flex-grow p-8 flex flex-col lg:flex-row justify-between gap-12">
+        {/* Coluna Esquerda */}
+        <div className="flex flex-col gap-8 lg:w-1/2">
           <AnimatedText />
           <Button asChild>
             <Link href="/contato" className="bg-red-600 hover:bg-purple-700 text-white rounded-full w-fit px-8 py-4 text-lg">
@@ -24,20 +25,25 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="lg:w-1/2 flex flex-col items-end gap-8">
-          <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-          <Image
-                  src="/foto_perfil.png"
-                  alt="Victor Zampella sorrindo usando uma camisa polo azul"
-                  width={300}
-                  height={300}
-                  className="rounded-full border-4 border-blue-600"
-                />
+        {/* Coluna Direita */}
+        <div className="lg:w-1/2 flex flex-col items-center lg:items-start gap-8">
+          {/* Imagem Redonda e Menor */}
+          <div className="relative flex justify-center mb-8">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48">
+              <Image
+                src="/foto_perfil.png"
+                alt="Victor Zampella sorrindo usando uma camisa polo azul"
+                width={192}
+                height={192}
+                className="rounded-full border-4 border-blue-600"
+              />
+            </div>
           </div>
 
-          <div className="w-full max-w-sm">
+          {/* Seção de Habilidades */}
+          <div className="w-full max-w-sm flex flex-col items-start">
             <h2 className="text-blue-600 text-xl font-bold mb-4">Habilidades</h2>
-            <div className="space-y-2">
+            <div className="space-y-4 w-full">
               {skills.map((skill) => (
                 <div key={skill.name} className="flex items-center">
                   <span className="text-white text-sm w-32">{skill.name}</span>
