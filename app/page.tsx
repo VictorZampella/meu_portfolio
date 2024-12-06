@@ -18,7 +18,7 @@ export default function Home() {
         <div className="flex flex-col gap-8 lg:w-1/2 mb-8 lg:mb-0">
           <AnimatedText />
           <Button asChild>
-            <Link href="/contato" className="bg-blue-600 hover:bg-purple-700 text-white rounded-full w-fit px-8 py-4 text-lg">
+            <Link href="/contato" className="bg-red-600 hover:bg-purple-700 text-white rounded-full w-fit px-8 py-4 text-lg">
               Entre em contato
             </Link>
           </Button>
