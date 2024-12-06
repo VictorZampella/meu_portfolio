@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
-import Typed from 'typed.js'
+import React, { useEffect, useRef, useState } from 'react';
+import Typed from 'typed.js';
 
 const AnimatedText: React.FC = () => {
   const el = useRef<HTMLSpanElement>(null);
@@ -10,34 +10,33 @@ const AnimatedText: React.FC = () => {
 
   const texts = [
     'Olá, me chamo Victor Zampella',
-    'Sou desenvolvedor Mobile'
+    'Sou desenvolvedor Mobile',
   ];
 
   useEffect(() => {
     if (el.current) {
-      typed.current = new Typed(el.current, {
-        strings: [''],
-        typeSpeed: 50,
-        backSpeed: 30,
-        showCursor: true,
-        cursorChar: '|',
-      });
-
       const typeText = (text: string) => {
         return new Promise<void>((resolve) => {
           if (typed.current) {
-            typed.current.strings = [text];
-            typed.current.reset(true);
-            typed.current.options.onComplete = () => {
-              setTimeout(resolve, 1000);
-            };
+            typed.current.destroy(); // Remove a instância anterior
           }
+
+          typed.current = new Typed(el.current, {
+            strings: [text],
+            typeSpeed: 50,
+            backSpeed: 30,
+            showCursor: true,
+            cursorChar: '|',
+            onComplete: () => {
+              setTimeout(resolve, 1000);
+            },
+          });
         });
       };
 
       const eraseText = () => {
         return new Promise<void>((resolve) => {
-          if (typed.current && el.current) {
+          if (el.current) {
             const text = el.current.textContent || '';
             let i = text.length;
             const interval = setInterval(() => {
@@ -76,8 +75,7 @@ const AnimatedText: React.FC = () => {
     <h1 className="text-5xl lg:text-6xl font-bold text-blue-600">
       <span ref={el}></span>
     </h1>
-  )
-}
+  );
+};
 
-export default AnimatedText
-
+export default AnimatedText;
