@@ -26,13 +26,13 @@ export default function Home() {
 
         <div className="lg:w-1/2 flex flex-col items-end gap-8">
           <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-            <Image
-              src="/foto_perfil.png"
-              alt="Victor Zampella"
-              fill
-              className="object-cover rounded-full border-4 border-blue-600"
-              priority
-            />
+          <Image
+                  src="/foto_perfil.png"
+                  alt="Victor Zampella sorrindo usando uma camisa polo azul"
+                  width={300}
+                  height={300}
+                  className="rounded-full border-4 border-blue-600"
+                />
           </div>
 
           <div className="w-full max-w-sm">
