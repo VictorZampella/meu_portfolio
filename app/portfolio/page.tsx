@@ -9,13 +9,19 @@ export default function Portfolio() {
       title: 'App de Formas Geométricas',
       description: 'All the Forms é um aplicativo educacional e funcional que permite calcular as áreas de diversas formas geométricas.',
       image: '/formas.jpg',
-      github: 'https://github.com/yourusername/geometric-forms'
+      github: 'https://github.com/VictorZampella/Aplicativo_Formas-Geometricas.git'
     },
     {
       title: 'App Filmes Aleatórios',
       description: 'Este projeto é um aplicativo simples desenvolvido em Kotlin para Android, com o objetivo de sortear filmes aleatórios e exibir o gênero correspondente abaixo da imagem do filme sorteado',
       image: '/corra.jpeg',
-      github: 'https://github.com/yourusername/random-movies'
+      github: 'https://github.com/VictorZampella/Aplicativo_Escolha_Filme.git'
+    },
+    {
+      title: 'App Bons Sonhos',
+      description: 'Com sons suaves e reconfortantes, criados especialmente para acalmar e relaxar, o aplicativo é uma solução simples e carinhosa para noites tranquilas e momentos de paz.',
+      image: '/soninho.jpeg',
+      github: 'https://github.com/VictorZampella/App_Bons_Sonhos.git'
     }
   ]
 
